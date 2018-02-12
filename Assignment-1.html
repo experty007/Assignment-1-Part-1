@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="stylesheet.css" >
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -8,6 +9,111 @@
 
 <h1> Test GitHub</h1>
 
+<canvas id="canvas1" width="1500px" height="1000px" ></canvas>
 
+<script>
+
+    var canvas = document.getElementById("canvas1");
+    if (canvas.getContext("2d")) { // Check HTML5 canvas support
+        context = canvas.getContext("2d"); // get Canvas Context object
+
+        //rectangle function
+        function rectangle(x, y, width, height) {
+            context.fillStyle = "";
+            context.fillRect(x, y, width, height);
+        }
+        
+        /*rectangle outline
+        function outLine(x, y, width, height) {
+            context.strokeStyle = "";
+            context.strokeRect(x, y, width, height);
+        }*/
+        
+        //circle function
+        function circle(x, y, radius, startangle, endangle) {
+            context.beginPath();
+            context.lineWidth = "1";
+            context.arc(x, y, radius, startangle, endangle);
+            context.fill();
+            context.stroke();
+
+        }
+
+        //hotCue function
+        function hotCue(x, y, width, height, x1, y1, width1, height1 )
+        {
+            //HotCue Outline
+            context.fillStyle = "red";
+            context.fillRect(x, y, width, height);
+
+            //HotCue Inside Square
+            context.fillStyle = "black";
+            rectangle(x1, y1, width1, height1);
+
+        }
+
+//main controller
+        rectangle(50, 100, 1300, 600, "");
+
+
+//Left Side
+
+        //Left Jog wheel
+        context.strokeStyle = "white";
+        context.fillStyle = "grey";
+        circle(320,340,160,0, Math.PI * 2, true);
+
+
+//Left Hot queues
+
+        //HotCue A
+        hotCue(180, 520, 70, 70, 185, 525, 60, 60);
+        //x, y, width, height, x1, y1, width1, height1
+
+        //HotCue B
+        hotCue(260, 520, 70, 70, 265, 525, 60, 60);
+
+        //HotCue C
+        hotCue(340, 520, 70, 70, 345, 525, 60, 60);
+
+        //HotCue D
+        hotCue(420, 520, 70, 70, 425, 525, 60, 60);
+
+        //HotCue E
+        hotCue(180, 600, 70, 70, 185, 605, 60, 60);
+
+        //HotCue F
+        hotCue(260, 600, 70, 70, 265, 605, 60, 60);
+
+        //HotCue G
+        hotCue(340, 600, 70, 70, 345, 605, 60, 60);
+
+        //HotCue H
+        hotCue(420, 600, 70, 70, 425, 605, 60, 60);
+
+
+        //Left Cue Button
+        context.strokeStyle = "white";
+        context.fillStyle = "orange";
+        circle(120,550,40,0, Math.PI * 2, true);
+
+
+        //Left Play Button
+        context.strokeStyle = "white";
+        context.fillStyle = "#73ff1c";
+        circle(120,640,40,0, Math.PI * 2, true);
+
+        /*
+        //Hot queue B
+        context.fillStyle = "red";
+        rectangle(180, 520, 70, 70, "");
+        //x, y, width, height
+
+        //Hot queue B
+        context.fillStyle = "black";
+        rectangle(185, 525, 60, 60, "");
+        //x, y, width, height
+*/
+    }
+</script>
 </body>
-</html>
