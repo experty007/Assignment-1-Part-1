@@ -7,8 +7,6 @@
 </head>
 <body>
 
-<h1> Test GitHub</h1>
-
 <canvas id="canvas1" width="1500px" height="1000px" ></canvas>
 
 <script>
@@ -53,7 +51,7 @@
         }
 
 //main controller
-        rectangle(50, 100, 1300, 600, "");
+        rectangle(50, 100, 1300, 650, "");
 
 
 //Left Side
@@ -61,47 +59,67 @@
         //Left Jog wheel
         context.strokeStyle = "white";
         context.fillStyle = "grey";
-        circle(320,340,160,0, Math.PI * 2, true);
+        circle(330,350,170,0, Math.PI * 2, true);
+
+        context.strokeStyle = "white";
+        context.fillStyle = "black";
+        circle(330,350,70,0, Math.PI * 2, true);
+
+        context.strokeStyle = "red";
+        context.fillStyle = "white";
+        circle(330,350,30,0, Math.PI * 2, true);
 
 
 //Left Hot queues
+        //HotCue
+        hotCue(180, 540, 70, 20);
+        //x, y, width, height
+
+        //Pad FX
+        hotCue(260, 540, 70, 20);
+
+        //Slicer
+        hotCue(340, 540, 70, 20);
+
+        //Sampler
+        hotCue(420, 540, 70, 20);
 
         //HotCue A
-        hotCue(180, 520, 70, 70, 185, 525, 60, 60);
+        hotCue(180, 570, 70, 70, 185, 575, 60, 60);
         //x, y, width, height, x1, y1, width1, height1
 
         //HotCue B
-        hotCue(260, 520, 70, 70, 265, 525, 60, 60);
+        hotCue(260, 570, 70, 70, 265, 575, 60, 60);
 
         //HotCue C
-        hotCue(340, 520, 70, 70, 345, 525, 60, 60);
+        hotCue(340, 570, 70, 70, 345, 575, 60, 60);
 
         //HotCue D
-        hotCue(420, 520, 70, 70, 425, 525, 60, 60);
+        hotCue(420, 570, 70, 70, 425, 575, 60, 60);
 
         //HotCue E
-        hotCue(180, 600, 70, 70, 185, 605, 60, 60);
+        hotCue(180, 650, 70, 70, 185, 655, 60, 60);
 
         //HotCue F
-        hotCue(260, 600, 70, 70, 265, 605, 60, 60);
+        hotCue(260, 650, 70, 70, 265, 655, 60, 60);
 
         //HotCue G
-        hotCue(340, 600, 70, 70, 345, 605, 60, 60);
+        hotCue(340, 650, 70, 70, 345, 655, 60, 60);
 
         //HotCue H
-        hotCue(420, 600, 70, 70, 425, 605, 60, 60);
-
+        hotCue(420, 650, 70, 70, 425, 655, 60, 60);
+        //x, y, width, height, x1, y1, width1, height1
 
         //Left Cue Button
         context.strokeStyle = "white";
         context.fillStyle = "orange";
-        circle(120,550,40,0, Math.PI * 2, true);
+        circle(120,600,40,0, Math.PI * 2, true);
 
 
         //Left Play Button
         context.strokeStyle = "white";
         context.fillStyle = "#73ff1c";
-        circle(120,640,40,0, Math.PI * 2, true);
+        circle(120,690,40,0, Math.PI * 2, true);
 
         /*
         //Hot queue B
