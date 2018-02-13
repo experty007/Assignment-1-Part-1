@@ -20,12 +20,15 @@
             context.fillStyle = "";
             context.fillRect(x, y, width, height);
         }
+
         
-        /*rectangle outline
+        //rectangle outline
         function outLine(x, y, width, height) {
             context.strokeStyle = "";
+            context.lineWidth = "2";
             context.strokeRect(x, y, width, height);
-        }*/
+        }
+
         
         //circle function
         function circle(x, y, radius, startangle, endangle) {
@@ -34,20 +37,20 @@
             context.arc(x, y, radius, startangle, endangle);
             context.fill();
             context.stroke();
-
         }
 
         //hotCue function
-        function hotCue(x, y, width, height, x1, y1, width1, height1 )
-        {
+        function hotCue(x, y, width, height, x1, y1, width1, height1 ) {
             //HotCue Outline
-            context.fillStyle = "red";
+            context.fillStyle = "#FF0000";
             context.fillRect(x, y, width, height);
 
             //HotCue Inside Square
-            context.fillStyle = "black";
+            context.fillStyle = "#000000";
+            context.strokeStyle = "#ffffff";
+            context.lineWidth = "2";
+            context.strokeRect(x1, y1, width1, height1);
             rectangle(x1, y1, width1, height1);
-
         }
 
 //main controller
@@ -56,21 +59,47 @@
 
 //Left Side
 
-        //Left Jog wheel
-        context.strokeStyle = "white";
-        context.fillStyle = "grey";
-        circle(330,350,170,0, Math.PI * 2, true);
 
-        context.strokeStyle = "white";
-        context.fillStyle = "black";
+//Left Jog wheel
+
+        //Outer Jog wheel
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#525b5f";
+        circle(330,350,170,0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        //Inner Jog wheel
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#000000";
         circle(330,350,70,0, Math.PI * 2, true);
 
+        //Centre of Jog wheel
         context.strokeStyle = "red";
-        context.fillStyle = "white";
+        context.fillStyle = "#ffffff";
         circle(330,350,30,0, Math.PI * 2, true);
+
+//Left Shift Button
+
+        //Shift Button
+        context.strokeStyle = "#ffffff";
+        outLine(103,420,30,30);
+        context.fillStyle = "#525b5f";
+        rectangle(103,420,30,30);
+
+//Left Sync Button
+
+        //Sync Button
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#FF0000";
+        circle(120,510,20,0, Math.PI * 2, true);
+
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#000000";
+        circle(120,510,15,0, Math.PI * 2, true);
 
 
 //Left Hot queues
+
         //HotCue
         hotCue(180, 540, 70, 20);
         //x, y, width, height
@@ -111,13 +140,13 @@
         //x, y, width, height, x1, y1, width1, height1
 
         //Left Cue Button
-        context.strokeStyle = "white";
-        context.fillStyle = "orange";
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#F09D00";
         circle(120,600,40,0, Math.PI * 2, true);
 
 
         //Left Play Button
-        context.strokeStyle = "white";
+        context.strokeStyle = "#ffffff";
         context.fillStyle = "#73ff1c";
         circle(120,690,40,0, Math.PI * 2, true);
 
