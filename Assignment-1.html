@@ -64,6 +64,18 @@
             rectangle(x2, y2, width2, height2);
         }
 
+        //Loop Buttons
+        function loopButtons(x, y, width, height, x3, y3, width3, height3 ) {
+            //Beat Outline
+            context.fillStyle = "#F09D00";
+            context.fillRect(x, y, width, height);
+
+            //Beat Fx Inside Square
+            context.fillStyle = "#000000";
+            rectangle(x3, y3, width3, height3);
+
+        }
+
 //main controller
         rectangle(50, 100, 1300, 650, "");
 
@@ -121,7 +133,14 @@
         context.fillStyle = "#000000";
         circle(120,510,15,0, Math.PI * 2, true);
 
-//Loop buttons
+//Left Loop buttons
+
+
+        loopButtons(505, 590, 55, 30, 510, 595, 45, 20);
+
+        //Beat Left
+        loopButtons(570, 590, 55, 30, 575, 595, 45, 20);
+        //x, y, width, height, x3, y3, width3, height3
 
 
 
