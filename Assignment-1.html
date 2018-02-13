@@ -48,7 +48,21 @@
             context.strokeRect(x, y, width, height);
         }
 
-        function line(){
+        function line(x, y, x1, y1) {
+            context.beginPath();
+            context.moveTo(x, y); //Sets the paths origin
+            context.lineTo(x1, y1);
+            context.strokeStyle = "white";
+            context.lineWidth = "2";
+            context.stroke();
+        }
+
+        function mixerNobes(x, y, radius, startangle, endangle){
+            context.beginPath();
+            context.lineWidth = "1";
+            context.arc(x, y, radius, startangle, endangle);
+            context.fill();
+            context.stroke();
 
         }
         
@@ -90,7 +104,7 @@
 
 
 //main controller
-        rectangle(50, 100, 1300, 650, "");
+        rectangle(50, 100, 1400, 650, "");
 
 
 //Left Side
@@ -107,11 +121,43 @@
         //Beat Right
         beatFx(380, 135, 55, 30, 385, 140, 45, 20);
 
+//Left Fx Mixer Nobe
+
+
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#373D40";
+        circle(470,150,20,0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        line(470, 150, 470, 130);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
+
 
 //Left Tempo Slider
 
         tempoSlider(525, 125, 90, 130);
         //x, y, width, height,
+
+        line(525, 140, 615, 140);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
+
+        line(525, 160, 615, 160);
+
+        line(525, 180, 615, 180);
+
+        line(525, 200, 615, 200);
+
+        line(525, 220, 615, 220);
+
+        line(525, 240, 615, 240);
+
+
+        context.fillStyle = "#000000";
+        rectangle(525, 175, 90, 30);
 
 
 //Left Jog wheel
@@ -164,17 +210,17 @@
 //Left Hot queues
 
         //HotCue
-        hotCue(180, 540, 70, 20);
-        //x, y, width, height
+        hotCue(180, 540, 70, 20, 187, 544, 55, 10);
+        //x, y, width, height, x2, y2, width2, height2
 
         //Pad FX
-        hotCue(260, 540, 70, 20);
+        hotCue(260, 540, 70, 20, 267, 544, 55, 10);
 
         //Slicer
-        hotCue(340, 540, 70, 20);
+        hotCue(340, 540, 70, 20, 347, 544, 55, 10);
 
         //Sampler
-        hotCue(420, 540, 70, 20);
+        hotCue(420, 540, 70, 20, 427, 544, 55, 10);
 
         //HotCue A
         hotCue(180, 570, 70, 70, 185, 575, 60, 60);
