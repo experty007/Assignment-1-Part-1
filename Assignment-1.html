@@ -57,11 +57,18 @@
             context.stroke();
         }
 
-        function mixerNobes(x, y, radius, startangle, endangle){
+        function mixerNobes(x, y, radius, startangle, endangle, x1, y1, x2, y2){
             context.beginPath();
             context.lineWidth = "1";
             context.arc(x, y, radius, startangle, endangle);
             context.fill();
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(x1, y1); //Sets the paths origin
+            context.lineTo(x2, y2);
+            context.strokeStyle = "white";
+            context.lineWidth = "2";
             context.stroke();
 
         }
@@ -102,13 +109,6 @@
             rectangle(x2, y2, width2, height2);
         }
 
-        function right(v, width, height) {
-            context.save();
-            context.scale(-1, 1);
-            context.drawImage(v, 700, 1400, width * -1, height);
-            context.restore();
-
-        }
 
 
 //main controller
@@ -269,7 +269,6 @@
         context.fillStyle = "#73ff1c";
         circle(120,690,40,0, Math.PI * 2, true);
 
-        right(700, 1400);
 
     }
 
