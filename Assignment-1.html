@@ -57,19 +57,11 @@
             context.stroke();
         }
 
-        function mixerNobes(x, y, radius, startangle, endangle, x1, y1, x2, y2){
-            context.beginPath();
-            context.lineWidth = "1";
-            context.arc(x, y, radius, startangle, endangle);
-            context.fill();
-            context.stroke();
+        function mixerNobes(x, y, radius, startangle, endangle, x3, y3, x1, y1){
+            circle(x, y, radius, startangle, endangle);
 
-            context.beginPath();
-            context.moveTo(x1, y1); //Sets the paths origin
-            context.lineTo(x2, y2);
-            context.strokeStyle = "white";
-            context.lineWidth = "2";
-            context.stroke();
+            line(x3, y3, x1, y1);
+
 
         }
         
@@ -131,8 +123,13 @@
 
 //Left Fx Mixer Nobe
 
-
         context.strokeStyle = "#ffffff";
+        context.fillStyle = "#373D40";
+        mixerNobes(470,150,20,0, Math.PI * 2, 470, 150, 470, 130);
+        //x3, y3, radius, startangle, endangle
+        //line (moveTo x, y,) (lineTox1, y1)
+
+        /*context.strokeStyle = "#ffffff";
         context.fillStyle = "#373D40";
         circle(470,150,20,0, Math.PI * 2, true);
         //x, y, radius, startangle, endangle
@@ -140,7 +137,7 @@
         line(470, 150, 470, 130);
         //x, y, x1, y1
         //Move To x, y
-        //Line To x1, y1
+        //Line To x1, y1*/
 
 
 //Left Tempo Slider
