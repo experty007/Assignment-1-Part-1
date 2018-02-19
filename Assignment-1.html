@@ -40,13 +40,6 @@
             rectangle(x1, y1, width1, height1);
         }
 
-        function tempoSlider(x, y, width, height) {
-            context.strokeStyle = "#ffffff";
-            context.fillStyle = "#373D40";
-            context.lineWidth = "2";
-            context.fillRect(x, y, width, height);
-            context.strokeRect(x, y, width, height);
-        }
 
         function line(x, y, x1, y1) {
             context.beginPath();
@@ -57,12 +50,28 @@
             context.stroke();
         }
 
+        function slider(x, y, width, height) {
+            context.strokeStyle = "#ffffff";
+            context.fillStyle = "#373D40";
+            context.lineWidth = "2";
+            context.fillRect(x, y, width, height);
+            context.strokeRect(x, y, width, height);
+        }
+
         function mixerNobes(x, y, radius, startangle, endangle, x3, y3, x1, y1){
             circle(x, y, radius, startangle, endangle);
 
             line(x3, y3, x1, y1);
 
 
+        }
+
+        function tempoSlider(x, y, width, height) {
+            context.strokeStyle = "#ffffff";
+            context.fillStyle = "#373D40";
+            context.lineWidth = "2";
+            context.fillRect(x, y, width, height);
+            context.strokeRect(x, y, width, height);
         }
         
         //circle function
@@ -130,27 +139,44 @@
        //circle (x, y, radius, startangle, endangle)
        //line (x3, y3, x1, y1)
 
-//Left Trim Nobe
+//Left Load button
+        context.fillStyle = "#525b5f";
+        rectangle(690, 120, 90, 30);
+
+//left Mixer
+
+        //Left Trim Nobe
         mixerNobes(730,190,20,0, Math.PI * 2, 730, 190, 730, 170);
 //Left Hi
-        mixerNobes(730,190,20,0, Math.PI * 2, 730, 190, 730, 170);
+        mixerNobes(730,270,20,0, Math.PI * 2, 730, 270, 730, 250);
 //Left Mid
-        mixerNobes(730,190,20,0, Math.PI * 2, 730, 190, 730, 170);
+        mixerNobes(730,350,20,0, Math.PI * 2, 730, 350, 730, 330);
 //Left Low
-        mixerNobes(730,190,20,0, Math.PI * 2, 730, 190, 730, 170);
+        mixerNobes(730,430,20,0, Math.PI * 2, 730, 430, 730, 410);
 //Left Filter
-        mixerNobes(730,190,20,0, Math.PI * 2, 730, 190, 730, 170);
+        mixerNobes(730,510,20,0, Math.PI * 2, 730, 510, 730, 490);
 
+//Left Channel level slider
 
-        /*context.strokeStyle = "#ffffff";
-        context.fillStyle = "#373D40";
-        circle(470,150,20,0, Math.PI * 2, true);
-        //x, y, radius, startangle, endangle
+        slider(690, 550, 90, 130);
+        //x, y, width, height,
 
-        line(470, 150, 470, 130);
+        line(690, 570, 780, 570);
         //x, y, x1, y1
         //Move To x, y
-        //Line To x1, y1*/
+        //Line To x1, y1
+        line(690, 590, 780, 590);
+
+        line(690, 610, 780, 610);
+
+        line(690, 630, 780, 630);
+
+        line(690, 650, 780, 650);
+
+        line(690, 670, 780, 670);
+
+        context.fillStyle = "#000000";
+        rectangle(690, 605, 90, 30);
 
 
 //Left Tempo Slider
@@ -280,7 +306,215 @@
         circle(120,690,40,0, Math.PI * 2, true);
 
 
+
     }
+
+
+</script>
+
+<script>
+// Right Side
+
+
+//Right Beat Fx2
+
+        //Fx
+        beatFx(200, 135, 70, 30, 205, 140, 60, 20);
+        //x, y, width, height, x1, y1, width1, height1
+
+        //Beat Left
+        beatFx(315, 135, 55, 30, 320, 140, 45, 20);
+
+        //Beat Right
+        beatFx(380, 135, 55, 30, 385, 140, 45, 20);
+
+
+//Right Fx Mixer Nobe
+
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#373D40";
+        //Fx Mixer Nobe
+        mixerNobes(470,150,20,0, Math.PI * 2, 470, 150, 470, 130);
+        //circle (x, y, radius, startangle, endangle)
+        //line (x3, y3, x1, y1)
+
+        // Right Load button
+        context.fillStyle = "#525b5f";
+        rectangle(990, 120, 90, 30);
+
+
+//centre of mixer
+
+//Master Level
+mixerNobes(880, 230,20,0, Math.PI * 2, 880, 230, 880, 210);
+//circle (x, y, radius, startangle, endangle)
+//line (x3, y3, x1, y1)
+
+//Headphones Level
+mixerNobes(880,390,20,0, Math.PI * 2, 880, 390, 880, 370);
+
+
+//Right Mixer
+
+        //Right Trim Nobe
+        mixerNobes(1030,190,20,0, Math.PI * 2, 1030, 190, 1030, 170);
+        //Right Hi
+        mixerNobes(1030,270,20,0, Math.PI * 2, 1030, 270, 1030, 250);
+        // Right Mid
+        mixerNobes(1030,350,20,0, Math.PI * 2, 1030, 350, 1030, 330);
+        //Right Low
+        mixerNobes(1030,430,20,0, Math.PI * 2, 1030, 430, 1030, 410);
+        //Right Filter
+        mixerNobes(1030,510,20,0, Math.PI * 2, 1030, 510, 1030, 490);
+
+//Right Channel level slider
+
+        slider(990, 550, 90, 130);
+        //x, y, width, height,
+
+        line(990, 570, 1080, 570);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
+        line(990, 590, 1080, 590);
+
+        line(990, 610, 1080, 610);
+
+        line(990, 630, 1080, 630);
+
+        line(990, 650, 1080, 650);
+
+        line(990, 670, 1080, 670);
+
+        context.fillStyle = "#000000";
+        rectangle(990, 605, 90, 30);
+
+
+//Right Tempo Slider
+
+        tempoSlider(525, 125, 90, 130);
+        //x, y, width, height,
+
+        line(525, 140, 615, 140);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
+
+        line(525, 160, 615, 160);
+
+        line(525, 180, 615, 180);
+
+        line(525, 220, 615, 220);
+
+        line(525, 240, 615, 240);
+
+
+        context.fillStyle = "#000000";
+        rectangle(525, 175, 90, 30);
+
+
+
+//Right Jog wheel
+
+        //Outer Jog wheel
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#525b5f";
+        circle(330,350,170,0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        //Inner Jog wheel
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#000000";
+        circle(330,350,70,0, Math.PI * 2, true);
+
+        //Centre of Jog wheel
+        context.strokeStyle = "red";
+        context.fillStyle = "#ffffff";
+        circle(330,350,30,0, Math.PI * 2, true);
+
+//Right Shift Button
+
+        //Shift Button
+        context.strokeStyle = "#ffffff";
+        outLine(105,420,30,30);
+        context.fillStyle = "#525b5f";
+        rectangle(105,420,30,30);
+
+//Right Sync Button
+
+        //Sync Button
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#FF0000";
+        circle(120,510,20,0, Math.PI * 2, true);
+
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#000000";
+        circle(120,510,15,0, Math.PI * 2, true);
+
+// Right Loop buttons
+
+        //Loop In
+        loopButtons(505, 590, 55, 30, 510, 595, 45, 20);
+
+        //Loop Out
+        loopButtons(570, 590, 55, 30, 575, 595, 45, 20);
+        //x, y, width, height, x3, y3, width3, height3
+
+
+//Right Hot queues
+
+        //HotCue
+        hotCue(180, 540, 70, 20, 187, 544, 55, 10);
+        //x, y, width, height, x2, y2, width2, height2
+
+        //Pad FX
+        hotCue(260, 540, 70, 20, 267, 544, 55, 10);
+
+        //Slicer
+        hotCue(340, 540, 70, 20, 347, 544, 55, 10);
+
+        //Sampler
+        hotCue(420, 540, 70, 20, 427, 544, 55, 10);
+
+        //HotCue A
+        hotCue(180, 570, 70, 70, 185, 575, 60, 60);
+        //x, y, width, height, x2, y2, width2, height2
+
+        //HotCue B
+        hotCue(260, 570, 70, 70, 265, 575, 60, 60);
+
+        //HotCue C
+        hotCue(340, 570, 70, 70, 345, 575, 60, 60);
+
+        //HotCue D
+        hotCue(420, 570, 70, 70, 425, 575, 60, 60);
+
+        //HotCue E
+        hotCue(180, 650, 70, 70, 185, 655, 60, 60);
+
+        //HotCue F
+        hotCue(260, 650, 70, 70, 265, 655, 60, 60);
+
+        //HotCue G
+        hotCue(340, 650, 70, 70, 345, 655, 60, 60);
+
+        //HotCue H
+        hotCue(420, 650, 70, 70, 425, 655, 60, 60);
+        //x, y, width, height, x2, y2, width2, height2
+
+
+//Right Cue and Play Buttons
+
+        //Right Cue Button
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#F09D00";
+        circle(120,600,40,0, Math.PI * 2, true);
+
+
+        //Right Play Button
+        context.strokeStyle = "#ffffff";
+        context.fillStyle = "#73ff1c";
+        circle(120,690,40,0, Math.PI * 2, true);
 
 
 </script>
