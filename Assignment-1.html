@@ -313,6 +313,29 @@
 </script>
 
 <script>
+//centre of mixer
+
+        //Master Level
+        context.fillStyle = "#525b5f";
+        mixerNobes(880, 230,20,0, Math.PI * 2, 880, 230, 880, 210);
+        //circle (x, y, radius, startangle, endangle)
+        //line (x3, y3, x1, y1)
+
+        //Headphones Level
+        mixerNobes(880,390,20,0, Math.PI * 2, 880, 390, 880, 370);
+
+        //Master Headphones
+        loopButtons(840, 440, 75, 30, 845, 445, 65, 20);
+
+        //Headphones Cue 1
+        loopButtons(840, 490, 35, 35, 845, 495, 25, 25);
+
+        //Headphones Cue 2
+        loopButtons(880, 490, 35, 35, 885, 495, 25, 25);
+
+</script>
+
+<script>
 // Right Side
 
 
@@ -342,16 +365,6 @@
         context.fillStyle = "#525b5f";
         rectangle(990, 120, 90, 30);
 
-
-//centre of mixer
-
-//Master Level
-mixerNobes(880, 230,20,0, Math.PI * 2, 880, 230, 880, 210);
-//circle (x, y, radius, startangle, endangle)
-//line (x3, y3, x1, y1)
-
-//Headphones Level
-mixerNobes(880,390,20,0, Math.PI * 2, 880, 390, 880, 370);
 
 
 //Right Mixer
