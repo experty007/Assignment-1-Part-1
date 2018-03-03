@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<canvas id="canvas1" width="2000px" height="1000px" ></canvas>
+<canvas id="canvas1" width="1750px" height="800px" ></canvas>
 
 <script>
 
@@ -529,6 +529,32 @@
         context.fillStyle = "#73ff1c";
         circle(1175,690,40,0, Math.PI * 2, true);
 
+</script>
+
+
+<!--Animation -->
+
+
+<div id="mp3Player">
+    <div id="audioBox"></div>
+    <canvas id="analyser" ></canvas> <!--creates the canvas for the analyser-->
+    <!--creates the canvas for the analyser-->
+</div>
+<script>
+//audio object
+
+    var audio = new Audio(); //new audio object
+    audio.src = 'audio/Flight 643.mp3'; //source file of the audio
+    audio.controls = true; //shows the default audio controls
+    audio.loop = true; //loops the audio
+    audio.autoplay = true; //Plays the track when the browser opens
+
+
+    //Defines all the variables that the analyser will use
+    var canvas, ctx, source, context, analyser, fbcArray, bars, barX, barWidth, barHeight;
+
+    //Initialize the mp3 player after the page loads the html
+    window.a
 
 </script>
 </body>
