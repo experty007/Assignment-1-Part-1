@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas1" width="400" height="400"></canvas>
+<script>
+    //Animation
+    var canvas = document.getElementById("canvas1");
+    var context = canvas.getContext("2d");
+
+    var sizes = [-100, -75, -50, -25]; // just an array of dimensions
+    var shades = ["#00FF23", "#FFC200","#FF7300","#FF3D03","#FF0000"]; // an array of colours
+    var a = sizes.length; //better practice storing the length of the array in a variable
+    var b = shades.length; //better practice storing the length of the array in a variable
+
+    function drawIt() {
+        var s = sizes[Math.floor(Math.random()*a)];// randomiser
+        var c = shades[Math.round(1)];
+        context.clearRect(0, 0, canvas.width, canvas.height); // clear the canvas to redraw
+        context.fillStyle = c;
+        context.fillRect(50, 300, 100, s); // draw the rectangle
+
+    }
+
+    setInterval(drawIt,1000); //sets the delay for redrawing at 1 seconds
+
+</script>
+
+</body>
+</html>
