@@ -566,9 +566,9 @@
         fbcArray = new Uint8Array(analyser.frequencyBinCount); //array that represents the sound frequency
         analyser.getByteFrequencyData(fbcArray);
         ctx.clearRect(0, 0, canvas.width, canvas.height); //clears the canvas
-        var shades = ["#00FF23", "#FFC200","#FF000A"]; // an array of colours
+        var shades = ["#00FF23"]; // an array of colours
         var b = shades.length; //better practice storing the length of the array in a variable
-        var c = shades[Math.floor(Math.random()*b)];//randomises the colors
+        var c = shades[Math.floor(Math.random()*b)];
         ctx.fillStyle = c; //Bar Color
         bars = 100; //The amount of bars rendered
 
