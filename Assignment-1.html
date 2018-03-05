@@ -139,44 +139,6 @@
         //circle (x, y, radius, startangle, endangle)
         //line (x3, y3, x1, y1)
 
-//Left Load button
-        context.fillStyle = "#525b5f";
-        rectangle(690, 120, 90, 30);
-
-//left Mixer
-
-        //Left Trim Nobe
-        mixerNobes(730, 190, 20, 0, Math.PI * 2, 730, 190, 730, 170);
-//Left Hi
-        mixerNobes(730, 270, 20, 0, Math.PI * 2, 730, 270, 730, 250);
-//Left Mid
-        mixerNobes(730, 350, 20, 0, Math.PI * 2, 730, 350, 730, 330);
-//Left Low
-        mixerNobes(730, 430, 20, 0, Math.PI * 2, 730, 430, 730, 410);
-//Left Filter
-        mixerNobes(730, 510, 20, 0, Math.PI * 2, 730, 510, 730, 490);
-
-//Left Channel level slider
-
-        slider(690, 550, 90, 130);
-        //x, y, width, height,
-
-        line(690, 570, 780, 570);
-        //x, y, x1, y1
-        //Move To x, y
-        //Line To x1, y1
-        line(690, 590, 780, 590);
-
-        line(690, 610, 780, 610);
-
-        line(690, 630, 780, 630);
-
-        line(690, 650, 780, 650);
-
-        line(690, 670, 780, 670);
-
-        context.fillStyle = "#000000";
-        rectangle(690, 605, 90, 30);
 
 
 //Left Tempo Slider
@@ -320,7 +282,57 @@
 </script>
 
 <script>
-    //centre of mixer
+    //Mixer Section
+
+    //left side of the Mixer
+    //Left Load button
+    context.fillStyle = "#525b5f";
+    rectangle(690, 120, 90, 30);
+
+    //Left Trim Nobe
+    mixerNobes(730, 190, 20, 0, Math.PI * 2, 730, 190, 730, 170);
+    //Left Hi
+    mixerNobes(730, 270, 20, 0, Math.PI * 2, 730, 270, 730, 250);
+    //Left Mid
+    mixerNobes(730, 350, 20, 0, Math.PI * 2, 730, 350, 730, 330);
+    //Left Low
+    mixerNobes(730, 430, 20, 0, Math.PI * 2, 730, 430, 730, 410);
+    //Left Filter
+    mixerNobes(730, 510, 20, 0, Math.PI * 2, 730, 510, 730, 490);
+
+    //Left Channel level slider
+
+    slider(690, 550, 90, 130);
+    //x, y, width, height,
+
+    line(690, 570, 780, 570);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
+    line(690, 590, 780, 590);
+
+    line(690, 610, 780, 610);
+
+    line(690, 630, 780, 630);
+
+    line(690, 650, 780, 650);
+
+    line(690, 670, 780, 670);
+
+    context.fillStyle = "#000000";
+    rectangle(690, 605, 90, 30);
+
+    //Channel volume level left
+    context.fillStyle = "#ff000a";
+    rectangle(800, 550, 20, 30);
+
+    context.fillStyle = "#ff9508";
+    rectangle(800, 600, 20, 30);
+
+    context.fillStyle = "#00ff23";
+    rectangle(800, 650, 20, 30);
+
+    //center of mixer
 
     //Master Level
     context.fillStyle = "#525b5f";
@@ -344,6 +356,59 @@
     //Headphones Cue 2
     loopButtons(880, 490, 35, 35, 885, 495, 25, 25);
     //x, y, width, height, x3, y3, width3, height3
+
+    context.fillStyle = "#525b5f";
+    rectangle(840, 550, 90, 130);
+    //x, y, width, height
+
+    //Right side of the Mixer
+
+    //Right Load button
+    context.fillStyle = "#525b5f";
+    rectangle(990, 120, 90, 30);
+
+    //Right Trim Nobe
+    mixerNobes(1030, 190, 20, 0, Math.PI * 2, 1030, 190, 1030, 170);
+    //Right Hi
+    mixerNobes(1030, 270, 20, 0, Math.PI * 2, 1030, 270, 1030, 250);
+    // Right Mid
+    mixerNobes(1030, 350, 20, 0, Math.PI * 2, 1030, 350, 1030, 330);
+    //Right Low
+    mixerNobes(1030, 430, 20, 0, Math.PI * 2, 1030, 430, 1030, 410);
+    //Right Filter
+    mixerNobes(1030, 510, 20, 0, Math.PI * 2, 1030, 510, 1030, 490);
+
+    //Right Channel level slider
+
+    slider(990, 550, 90, 130);
+    //x, y, width, height,
+
+    line(990, 570, 1080, 570);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
+    line(990, 590, 1080, 590);
+
+    line(990, 610, 1080, 610);
+
+    line(990, 630, 1080, 630);
+
+    line(990, 650, 1080, 650);
+
+    line(990, 670, 1080, 670);
+
+    context.fillStyle = "#000000";
+    rectangle(990, 605, 90, 30);
+
+    //Channel volume level right
+    context.fillStyle = "#ff000a";
+    rectangle(950, 550, 20, 30);
+
+    context.fillStyle = "#ff9508";
+    rectangle(950, 600, 20, 30);
+
+    context.fillStyle = "#00ff23";
+    rectangle(950, 650, 20, 30);
 
     //Cross Fade Slider
     slider(815, 690, 135, 50);
@@ -419,47 +484,6 @@
     mixerNobes(1520, 150, 20, 0, Math.PI * 2, 1520, 150, 1520, 130);
     //circle (x, y, radius, startangle, endangle)
     //line (x3, y3, x1, y1)
-
-    // Right Load button
-    context.fillStyle = "#525b5f";
-    rectangle(990, 120, 90, 30);
-
-
-    //Right Mixer
-
-    //Right Trim Nobe
-    mixerNobes(1030, 190, 20, 0, Math.PI * 2, 1030, 190, 1030, 170);
-    //Right Hi
-    mixerNobes(1030, 270, 20, 0, Math.PI * 2, 1030, 270, 1030, 250);
-    // Right Mid
-    mixerNobes(1030, 350, 20, 0, Math.PI * 2, 1030, 350, 1030, 330);
-    //Right Low
-    mixerNobes(1030, 430, 20, 0, Math.PI * 2, 1030, 430, 1030, 410);
-    //Right Filter
-    mixerNobes(1030, 510, 20, 0, Math.PI * 2, 1030, 510, 1030, 490);
-
-    //Right Channel level slider
-
-    slider(990, 550, 90, 130);
-    //x, y, width, height,
-
-    line(990, 570, 1080, 570);
-    //x, y, x1, y1
-    //Move To x, y
-    //Line To x1, y1
-    line(990, 590, 1080, 590);
-
-    line(990, 610, 1080, 610);
-
-    line(990, 630, 1080, 630);
-
-    line(990, 650, 1080, 650);
-
-    line(990, 670, 1080, 670);
-
-    context.fillStyle = "#000000";
-    rectangle(990, 605, 90, 30);
-
 
     //Right Tempo Slider
 
