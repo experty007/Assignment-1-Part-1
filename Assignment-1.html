@@ -533,7 +533,6 @@
 <div id="mp3Player">
     <div id="audioBox"></div>
     <canvas id="analyserRender" style="width: 100%; height: 100%;"></canvas> <!--creates the canvas for the analyser-->
-    <!--creates the canvas for the analyser-->
 </div>
 <script>
 
@@ -545,9 +544,8 @@
         ctx = canvas.getContext('2d');
 
         //The audio gets routed to the waveform
-        source = context.createMediaElementSource(audio);
-        //passes argument audio object though createMediaElementSource method
-        source.connect(analyser); // passed the analyser method
+        source = context.createMediaElementSource(audio); //passes argument audio object though the createMediaElementSource method
+        source.connect(analyser); //passed the analyser method
         analyser.connect(context.destination);
         frameLooper(); //Animates any style of graphs
 
@@ -570,7 +568,7 @@
             barX = i * 3;//The space between the bars
             barWidth = 2;//The width of the bar in px
             barHeight = -(fbcArray[i] / 2);//Allows the bars to move up and down
-            ctx.fillRect(barX, canvas.height, barWidth, barHeight);
+            ctx.fillRect(barX, canvas.height, barWidth, barHeight);//fills the bars in
         }
     }
 
