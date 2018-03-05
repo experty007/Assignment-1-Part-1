@@ -18,6 +18,7 @@
 
         //rectangle function
         function rectangle(x, y, width, height) {
+            context.strokeStyle = "";
             context.fillStyle = "";
             context.fillRect(x, y, width, height);
         }
@@ -268,13 +269,13 @@
         context.strokeStyle = "#ffffff";
         context.fillStyle = "#F09D00";
         circle(120, 600, 40, 0, Math.PI * 2, true);
-
+        //x, y, radius, startangle, endangle
 
         //Left Play Button
         context.strokeStyle = "#ffffff";
         context.fillStyle = "#73ff1c";
         circle(120, 690, 40, 0, Math.PI * 2, true);
-
+        //x, y, radius, startangle, endangle
 
     }
 
@@ -291,46 +292,80 @@
 
     //Left Trim Nobe
     mixerNobes(730, 190, 20, 0, Math.PI * 2, 730, 190, 730, 170);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Left Hi
     mixerNobes(730, 270, 20, 0, Math.PI * 2, 730, 270, 730, 250);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Left Mid
     mixerNobes(730, 350, 20, 0, Math.PI * 2, 730, 350, 730, 330);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Left Low
     mixerNobes(730, 430, 20, 0, Math.PI * 2, 730, 430, 730, 410);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Left Filter
     mixerNobes(730, 510, 20, 0, Math.PI * 2, 730, 510, 730, 490);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
 
     //Left Channel level slider
 
     slider(690, 550, 90, 130);
-    //x, y, width, height,
+    //x, y, width, height
 
     line(690, 570, 780, 570);
     //x, y, x1, y1
     //Move To x, y
     //Line To x1, y1
+
     line(690, 590, 780, 590);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(690, 610, 780, 610);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(690, 630, 780, 630);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(690, 650, 780, 650);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(690, 670, 780, 670);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     context.fillStyle = "#000000";
     rectangle(690, 605, 90, 30);
+    //x, y, width, height
 
     //Channel volume level left
     context.fillStyle = "#ff000a";
     rectangle(800, 550, 20, 30);
+    //x, y, width, height
 
     context.fillStyle = "#ff9508";
     rectangle(800, 600, 20, 30);
+    //x, y, width, height
 
     context.fillStyle = "#00ff23";
     rectangle(800, 650, 20, 30);
+    //x, y, width, height
 
     //center of mixer
 
@@ -356,6 +391,7 @@
     //Headphones Cue 2
     loopButtons(880, 490, 35, 35, 885, 495, 25, 25);
     //x, y, width, height, x3, y3, width3, height3
+
 
     context.fillStyle = "#525b5f";
     rectangle(840, 550, 90, 130);
@@ -399,16 +435,20 @@
 
     context.fillStyle = "#000000";
     rectangle(990, 605, 90, 30);
+    //x, y, width, height,
 
     //Channel volume level right
     context.fillStyle = "#ff000a";
     rectangle(950, 550, 20, 30);
+    //x, y, width, height,
 
     context.fillStyle = "#ff9508";
     rectangle(950, 600, 20, 30);
+    //x, y, width, height,
 
     context.fillStyle = "#00ff23";
     rectangle(950, 650, 20, 30);
+    //x, y, width, height,
 
     //Cross Fade Slider
     slider(818, 690, 135, 50);
@@ -454,8 +494,8 @@
     //Move To x, y
     //Line To x1, y1
 
-    context.fillStyle = "#000000";
     rectangle(868, 690, 35, 50);
+    //x, y, width, height
 
 </script>
 
