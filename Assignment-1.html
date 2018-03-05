@@ -389,6 +389,9 @@
     //Move To x, y
     //Line To x1, y1
 
+    context.fillStyle = "#000000";
+    rectangle(865, 690, 35, 50);
+
 </script>
 
 <script>
@@ -614,7 +617,7 @@
         context = new AudioContext(); // creates a new AudioContext object
         analyser = context.createAnalyser(); //Analyser method runs on the context instance
         canvas = document.getElementById('analyserRender');
-        ctx = canvas.getContext('2d');// get Canvas Context object
+        ctx = canvas.getContext('2d');//get Canvas Context object
 
         //The audio gets routed to the waveform
         source = context.createMediaElementSource(audio); //passes argument audio object though the createMediaElementSource method
@@ -632,22 +635,22 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height); //clears the canvas
         var shades = ["#ff000a"]; // an array of colours
         var b = shades.length; //better practice storing the length of the array in a variable
-        var c = shades[Math.floor(Math.random() * b)];
+        var c = shades[Math.floor(Math.random() * b)]; //randomises the colors
         ctx.fillStyle = c; //Bar Color
         bars = 100; //The amount of bars rendered
 
         //This loop renders the bars at various levels
         for (var i = 0; i < bars; i++) {
-            barX = i * 7;//The space between the bars
-            barWidth = 5;//The width of the bar in px
-            barHeight = -(fbcArray[i] / 2);//Allows the bars to move up and down
-            ctx.fillRect(barX, canvas.height, barWidth, barHeight);//fills the bars in
+            barX = i * 7; //The space between the bars
+            barWidth = 5; //The width of the bar in px
+            barHeight = -(fbcArray[i] / 2); //Allows the bars to move up and down
+            ctx.fillRect(barX, canvas.height, barWidth, barHeight); //fills the bars in
         }
     }
 
     //audio object
 
-    var audio = new Audio(); //new audio object
+    var audio = new Audio(); //Creates a new audio object
     audio.src = 'audio/Flight 643.mp3'; //source file of the audio
     audio.controls = true; //shows the default audio controls
     audio.loop = true; //loops the audio
