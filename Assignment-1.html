@@ -494,6 +494,7 @@
     //Move To x, y
     //Line To x1, y1
 
+    context.fillStyle = "#000000";
     rectangle(868, 690, 35, 50);
     //x, y, width, height
 
@@ -762,6 +763,7 @@
         ctx.beginPath();//starts the path
         ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draw the circle
         ctx.fillStyle = JSONObject["colour"]; // what colour?
+        ctx.width = JSONObject["width"];
         ctx.fill();
         ctx.stroke();
     }
