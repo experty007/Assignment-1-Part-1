@@ -8,7 +8,7 @@
 <body>
 <h1> Static using HTML canvas </h1>
 <!-- Static -->
-<canvas id="canvas1" width="1750px" height="800px"></canvas>
+<canvas id="canvas1" width="1750px" height="750px"></canvas>
 
 <script>
 
@@ -726,6 +726,53 @@
 
     //Initialize the mp3 player after the page loads the html
     window.addEventListener("load", initMp3Player, false);
+
+</script>
+
+<br>
+<!--JSON element-->
+<h1> JSON - using HTML canvas </h1>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var width = canvas.width/2;
+    var height = canvas.height/2;
+
+    function yellowCircle() {
+        var JSONObject = JSON.parse( '{"radius": 200, "colour": " #FFDB00 "}' ); //creates the properties of the object
+        ctx.beginPath();
+        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draws the circle
+        ctx.fillStyle = JSONObject["colour"]; // what colour?
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function redCircle() {
+        var JSONObject = JSON.parse( '{"radius": 175, "colour": " #FF000A "}' ); //creates the properties of the object
+        ctx.beginPath();
+        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draw the circle
+        ctx.fillStyle = JSONObject["colour"]; // what colour?
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function greenCircle() {
+        var JSONObject = JSON.parse( '{"radius": 150, "colour": " #00FF10 "}' ); //creates the properties of the object
+        ctx.beginPath();//starts the path
+        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draw the circle
+        ctx.fillStyle = JSONObject["colour"]; // what colour?
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    yellowCircle();
+
+    redCircle();
+
+    greenCircle();
+
+
 
 </script>
 </body>
