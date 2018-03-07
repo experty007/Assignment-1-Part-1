@@ -741,7 +741,7 @@
     if (canvas.getContext("2d")) { // Check HTML5 canvas support
         context = canvas.getContext("2d"); // get Canvas Context object
 
-        //circle function
+        //Head function
         function head(x, y, radius, startangle, endangle) {
             context.beginPath();
             context.lineWidth = "1";
@@ -750,7 +750,7 @@
             context.fill();
             context.stroke();
         }
-
+        //function for the arms and legs
         function armLeg(x, y, x1, y1, x2, y2, x3, y3) {
             context.beginPath();
             context.strokeStyle = "#0000ff"; // blue
