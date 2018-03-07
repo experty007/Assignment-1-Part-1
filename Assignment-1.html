@@ -675,6 +675,7 @@
         catch(e) {
             alert('Web Audio API is not supported in this browser please use Google Chrome or FireFox');
         }
+
     }
 
     function initMp3Player() {
@@ -698,8 +699,8 @@
         fbcArray = new Uint8Array(analyser.frequencyBinCount); //array that represents the sound frequency
         analyser.getByteFrequencyData(fbcArray);
         ctx.clearRect(0, 0, canvas.width, canvas.height); //clears the canvas
-        var shades = ["#ff000a"]; // an array of colours
-        var b = shades.length; //better practice storing the length of the array in a variable
+        var shades = ["#ff000a"]; //an array of colours
+        var b = shades.length; //stores the length of the array in a variable
         var c = shades[Math.floor(Math.random() * b)]; //randomises the colors
         ctx.fillStyle = c; //Bar Color
         bars = 100; //The amount of bars rendered
@@ -708,7 +709,7 @@
         for (var i = 0; i < bars; i++) {
             barX = i * 7; //The space between the bars
             barWidth = 5; //The width of the bar in px
-            barHeight = -(fbcArray[i] / 2); //Allows the bars to move up and down
+            barHeight = -(fbcArray[i] / 2); //Allows the bars to move up and down and changes how far they can go up and down
             ctx.fillRect(barX, canvas.height, barWidth, barHeight); //fills the bars in
         }
     }
@@ -733,46 +734,104 @@
 <br>
 <!--JSON element-->
 <h1> JSON - using HTML canvas </h1>
-<canvas id="myCanvas" width="500" height="500"></canvas>
+<canvas id="canvas3" width="1000" height="1000"></canvas>
 <script>
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var width = canvas.width/2;
-    var height = canvas.height/2;
 
-    function yellowCircle() {
-        var JSONObject = JSON.parse( '{"radius": 200, "colour": " #FFDB00 "}' ); //creates the properties of the object
-        ctx.beginPath();
-        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draws the circle
-        ctx.fillStyle = JSONObject["colour"]; // what colour?
-        ctx.fill();
-        ctx.stroke();
+    var canvas = document.getElementById("canvas3");
+    if (canvas.getContext("2d")) { // Check HTML5 canvas support
+        context = canvas.getContext("2d"); // get Canvas Context object
+
+        //circle function
+        function head(x, y, radius, startangle, endangle) {
+            context.beginPath();
+            context.lineWidth = "1";
+            context.fillStyle = "bisque"; // #ffe4c4
+            context.arc(x, y, radius, startangle, endangle);
+            context.fill();
+            context.stroke();
+        }
+
+        function armLeg(x, y, x1, y1, x2, y2, x3, y3) {
+            context.beginPath();
+            context.strokeStyle = "#0000ff"; // blue
+            context.moveTo(x, y);
+            context.lineTo(x1, y1);
+            context.moveTo(x2, y2);
+            context.lineTo(x3, y3);
+            context.stroke();
+        }
+
+        //Head
+        head(200, 50, 30, 0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        //Mouth
+        context.strokeStyle = "#FF000B"; // color
+        head(200, 50, 20, 0, Math.PI, false);
+        //x, y, radius, startangle, endangle
+
+        //eyes
+
+        //Left eye
+        context.fillStyle = "#008f2c"; // color
+        context.strokeStyle = "#000000";
+        head(190, 45, 3, 0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        //right eye
+        head(210, 45, 3, 0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
+
+        // body
+        context.beginPath();
+        context.moveTo(200, 80);
+        context.lineTo(200, 180);
+        context.strokeStyle = "navy";
+        context.stroke();
+
+
+        //Arms
+        armLeg(200, 80, 150, 130, 200, 80, 250, 130);
+
+        //Legs
+        armLeg(200, 180, 150, 280, 200, 180, 250, 280);
+
+
+        function yellowCircle() {
+            var JSONObject = JSON.parse('{"radius": 200, "colour": " #FFDB00 "}'); //creates the properties of the object
+            ctx.beginPath();
+            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draws the circle
+            ctx.fillStyle = JSONObject["colour"]; // what colour?
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function redCircle() {
+            var JSONObject = JSON.parse('{"radius": 175, "colour": " #FF000A "}'); //creates the properties of the object
+            ctx.beginPath();
+            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draw the circle
+            ctx.fillStyle = JSONObject["colour"]; // what colour?
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function greenCircle() {
+            var JSONObject = JSON.parse('{"radius": 150, "colour": " #00FF10 "}'); //creates the properties of the object
+            ctx.beginPath();//starts the path
+            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draw the circle
+            ctx.fillStyle = JSONObject["colour"]; // what colour?
+            ctx.width = JSONObject["width"];
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        yellowCircle();
+
+        redCircle();
+
+        greenCircle();
+
     }
-
-    function redCircle() {
-        var JSONObject = JSON.parse( '{"radius": 175, "colour": " #FF000A "}' ); //creates the properties of the object
-        ctx.beginPath();
-        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draw the circle
-        ctx.fillStyle = JSONObject["colour"]; // what colour?
-        ctx.fill();
-        ctx.stroke();
-    }
-
-    function greenCircle() {
-        var JSONObject = JSON.parse( '{"radius": 150, "colour": " #00FF10 "}' ); //creates the properties of the object
-        ctx.beginPath();//starts the path
-        ctx.arc(width,height,JSONObject.radius,0,2*Math.PI); // draw the circle
-        ctx.fillStyle = JSONObject["colour"]; // what colour?
-        ctx.width = JSONObject["width"];
-        ctx.fill();
-        ctx.stroke();
-    }
-
-    yellowCircle();
-
-    redCircle();
-
-    greenCircle();
 
 
 
