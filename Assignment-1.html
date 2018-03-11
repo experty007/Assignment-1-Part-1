@@ -734,116 +734,15 @@
 <br>
 <!--JSON element-->
 <h1> JSON - using HTML canvas </h1>
+
 <canvas id="canvas3" width="1000" height="1000"></canvas>
-<script>
 
+<script>
     var canvas = document.getElementById("canvas3");
-    if (canvas.getContext("2d")) { // Check HTML5 canvas support
-        context = canvas.getContext("2d"); // get Canvas Context object
-
-        //Head function
-        function head(x, y, radius, startangle, endangle) {
-            //creates the properties of the object
-            context.beginPath();
-            context.lineWidth = "1";
-            context.fillStyle = "bisque"; // #ffe4c4
-            context.arc(x, y, radius, startangle, endangle);
-            context.fill();
-            context.stroke();
-        }
-        //function for the arms and legs
-        function armLeg(x, y, x1, y1, x2, y2, x3, y3) {
-            context.beginPath();
-            context.strokeStyle = "#0000ff"; // blue
-            context.moveTo(x, y);
-            context.lineTo(x1, y1);
-            context.moveTo(x2, y2);
-            context.lineTo(x3, y3);
-            context.stroke();
-        }
-
-        //Head
-        head(200, 50, 30, 0, Math.PI * 2, true);
-        //x, y, radius, startangle, endangle
-
-        //Mouth
-        context.strokeStyle = "#FF000B"; // color
-        head(200, 50, 20, 0, Math.PI, false);
-        //x, y, radius, startangle, endangle
-
-        //eyes
-
-        //Left eye
-        context.fillStyle = "#008f2c"; // color
-        context.strokeStyle = "#000000";
-        head(190, 45, 3, 0, Math.PI * 2, true);
-        //x, y, radius, startangle, endangle
-
-        //right eye
-        head(210, 45, 3, 0, Math.PI * 2, true);
-        //x, y, radius, startangle, endangle
-
-        // body
-        context.beginPath();
-        context.moveTo(200, 80);
-        context.lineTo(200, 180);
-        context.strokeStyle = "navy";
-        context.stroke();
-
-
-        //Arms
-        armLeg(200, 80, 150, 130, 200, 80, 250, 130);
-
-        //Legs
-        armLeg(200, 180, 150, 280, 200, 180, 250, 280);
-
-
-        function yellowCircle() {
-            var JSONObject = JSON.parse('{"radius": 200, "colour": " #FFDB00 "}'); //creates the properties of the object
-            ctx.beginPath();
-            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draws the circle
-            ctx.fillStyle = JSONObject["colour"]; // what colour?
-            ctx.fill();
-            ctx.stroke();
-        }
-
-        function redCircle() {
-            var JSONObject = JSON.parse('{"radius": 175, "colour": " #FF000A "}'); //creates the properties of the object
-            ctx.beginPath();
-            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draw the circle
-            ctx.fillStyle = JSONObject["colour"]; // what colour?
-            ctx.fill();
-            ctx.stroke();
-        }
-
-        function greenCircle() {
-            var JSONObject = JSON.parse('{"radius": 150, "colour": " #00FF10 "}'); //creates the properties of the object
-            ctx.beginPath();//starts the path
-            ctx.arc(width, height, JSONObject.radius, 0, 2 * Math.PI); // draw the circle
-            ctx.fillStyle = JSONObject["colour"]; // what colour?
-            ctx.width = JSONObject["width"];
-            ctx.fill();
-            ctx.stroke();
-        }
-
-        yellowCircle();
-
-        redCircle();
-
-        greenCircle();
-
-    }
-
-</script>
-
-<canvas id="canvas4" width="1000" height="1000"></canvas>
-
-<script>
-    var canvas = document.getElementById("canvas4");
     if (canvas.getContext("2d")) { // Check HTML5 canvas support
         context = canvas.getContext("2d");// get Canvas Context object
 
-        function head()
+        function Head()
         {
             var JSONObject = JSON.parse( '{"radius": 30, "colour": "bisque"}' ); //Object properties
             var JSONPosition = JSON.parse('{"x": 200, "y": 50} ');
@@ -854,7 +753,7 @@
             context.stroke();
         }
 
-        function eyes(x, y) {
+        function Eyes(x, y) {
             var JSONObject = JSON.parse( '{"radius": 3, "colour": "#008F2C"}' );
             var JSONLeft = JSON.parse('{"x": 190, "y": 45} ');
 
@@ -875,7 +774,16 @@
             context.closePath();
         }
 
-        function body() {
+        function Mouth() {
+            var JSONObject = JSON.parse( '{"radius": 20, "colour": "#FF000B"}' ); //Object properties
+            var JSONPosition = JSON.parse('{"x": 200, "y": 50} ');
+            context.beginPath();
+            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius,0, Math.PI, false); // draw the circle
+            context.strokeStyle = JSONObject["colour"]; // what colour?
+            context.stroke();
+        }
+
+        function Body() {
             var JSONMoveTo = JSON.parse('{"x": 200, "y": 80} ');
             var JSONLineTo =  JSON.parse('{"x1": 200, "y1": 180 } ');
             var JSONColour = JSON.parse('{"colour": "#0000ff"} ');
@@ -902,18 +810,39 @@
 
             context.strokeStyle = JSONColour["colour"]; // blue
             context.stroke();
-            //200, 80, 150, 130, 200, 80, 250, 130
         }
-        //Head
-        head();
-        //W, H
 
-        //Left Eye
-        eyes();
+        function Legs() {
+            var JSONMoveTo = JSON.parse('{"x": 200,"y": 180} '); //Left Leg
+            var JSONLineToA =  JSON.parse('{"x1": 150, "y1": 280 } '); //Left Leg
 
-        body();
+            context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Left Leg
+            context.lineTo(JSONLineToA.x1, JSONLineToA.y1); //Left Leg
+
+            var JSONLineToB = JSON.parse('{"x2": 250, "y2": 280 } ');//Right Leg
+            var JSONColour = JSON.parse('{"colour": "#0000ff"} ');//Right Leg
+            context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Right Leg
+            context.lineTo(JSONLineToB.x2, JSONLineToB.y2); //Right Leg
+
+            context.strokeStyle = JSONColour["colour"]; // blue
+            context.stroke();
+            //200, 180, 150, 280, 200, 180, 250, 280
+
+        }
+
+
+        //Function calls
+        Head();
+
+        Eyes();
+
+        Mouth();
+
+        Body();
 
         Arms();
+
+        Legs();
 
 
 
