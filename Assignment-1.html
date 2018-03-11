@@ -743,6 +743,7 @@
 
         //Head function
         function head(x, y, radius, startangle, endangle) {
+            //creates the properties of the object
             context.beginPath();
             context.lineWidth = "1";
             context.fillStyle = "bisque"; // #ffe4c4
@@ -833,7 +834,58 @@
 
     }
 
+</script>
+
+<canvas id="canvas4" width="1000" height="1000"></canvas>
+
+<script>
+    var canvas = document.getElementById("canvas4");
+    if (canvas.getContext("2d")) { // Check HTML5 canvas support
+        context = canvas.getContext("2d");// get Canvas Context object
+
+        function head(w,h)
+        {
+            var JSONObject = JSON.parse( '{"radius": 30, "colour": "bisque"}' ); //Object properties
+            context.beginPath();
+            context.arc(w,h,JSONObject.radius,0,2*Math.PI); // draw the circle
+            context.fillStyle = JSONObject["colour"]; // what colour?
+            context.fill();
+            context.stroke();
+        }
+
+        function eyes(x, y) {
+            var JSONObject = JSON.parse( '{"radius": 3, "colour": "#008F2C"}' ); //Object properties
+            context.beginPath();
+            context.arc(x, y,JSONObject.radius,0,2*Math.PI); // draw the circle
+            context.fillStyle = JSONObject["colour"]; // what colour?
+            context.fill();
+            context.stroke();
+        }
+
+        function body() {
+            var JSONMoveTo = JSON.parse('{"x": 200, "y": 80} ');
+            var JSONLineTo =  JSON.parse('{"x1": 200, "y1": 180 } ');
+            var JSONColour = JSON.parse('{"colour": "#0000ff"} ');
+            context.beginPath();
+            context.moveTo(JSONMoveTo.x, JSONMoveTo.y);
+            context.lineTo(JSONLineTo.x1, JSONLineTo.y1);
+            context.strokeStyle = JSONColour["colour"]; // blue
+            context.stroke();
+
+        }
+        //Head
+        head(200, 50);
+        //W, H
+
+        //Left Eye
+        eyes(190, 45);
+
+        //Right Eye
+        eyes(210, 45);
+
+        body();
 
 
+    }
 </script>
 </body>
