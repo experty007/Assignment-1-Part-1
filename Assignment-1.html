@@ -9,7 +9,6 @@
 <h1> Static using HTML canvas </h1>
 <!-- Static -->
 <canvas id="canvas1" width="1750px" height="750px"></canvas>
-
 <script>
 
     var canvas = document.getElementById("canvas1");
@@ -141,7 +140,6 @@
         //line (x3, y3, x1, y1)
 
 
-
 //Left Tempo Slider
 
         tempoSlider(525, 125, 90, 130);
@@ -153,12 +151,24 @@
         //Line To x1, y1
 
         line(525, 160, 615, 160);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
 
         line(525, 180, 615, 180);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
 
         line(525, 220, 615, 220);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
 
         line(525, 240, 615, 240);
+        //x, y, x1, y1
+        //Move To x, y
+        //Line To x1, y1
 
 
         context.fillStyle = "#000000";
@@ -177,11 +187,13 @@
         context.strokeStyle = "#ffffff";
         context.fillStyle = "#000000";
         circle(330, 350, 70, 0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
 
         //Centre of Jog wheel
         context.strokeStyle = "red";
         context.fillStyle = "#ffffff";
         circle(330, 350, 30, 0, Math.PI * 2, true);
+        //x, y, radius, startangle, endangle
 
 //Left Shift Button
 
@@ -402,17 +414,32 @@
     //Right Load button
     context.fillStyle = "#525b5f";
     rectangle(990, 120, 90, 30);
+    //x, y, width, height
 
     //Right Trim Nobe
     mixerNobes(1030, 190, 20, 0, Math.PI * 2, 1030, 190, 1030, 170);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Right Hi
     mixerNobes(1030, 270, 20, 0, Math.PI * 2, 1030, 270, 1030, 250);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     // Right Mid
     mixerNobes(1030, 350, 20, 0, Math.PI * 2, 1030, 350, 1030, 330);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Right Low
     mixerNobes(1030, 430, 20, 0, Math.PI * 2, 1030, 430, 1030, 410);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
+
     //Right Filter
     mixerNobes(1030, 510, 20, 0, Math.PI * 2, 1030, 510, 1030, 490);
+    //circle (x, y, radius, startangle, endangle)
+    //line (x3, y3, x1, y1)
 
     //Right Channel level slider
 
@@ -423,15 +450,31 @@
     //x, y, x1, y1
     //Move To x, y
     //Line To x1, y1
+
     line(990, 590, 1080, 590);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(990, 610, 1080, 610);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(990, 630, 1080, 630);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(990, 650, 1080, 650);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(990, 670, 1080, 670);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     context.fillStyle = "#000000";
     rectangle(990, 605, 90, 30);
@@ -512,10 +555,11 @@
 
     //Beat Left
     beatFx(1365, 135, 55, 30, 1370, 140, 45, 20);
+    //x, y, width, height, x1, y1, width1, height1
 
     //Beat Right
     beatFx(1430, 135, 55, 30, 1435, 140, 45, 20);
-
+    //x, y, width, height, x1, y1, width1, height1
 
     //Right Fx Mixer Nobe
 
@@ -537,17 +581,28 @@
     //Line To x1, y1
 
     line(1575, 160, 1665, 160);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(1575, 180, 1665, 180);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(1575, 220, 1665, 220);
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     line(1575, 240, 1665, 240);
-
+    //x, y, x1, y1
+    //Move To x, y
+    //Line To x1, y1
 
     context.fillStyle = "#000000";
     rectangle(1575, 175, 90, 30);
-
+    //x, y, width, height
 
     //Right Jog wheel
 
@@ -561,11 +616,13 @@
     context.strokeStyle = "#ffffff";
     context.fillStyle = "#000000";
     circle(1380, 350, 70, 0, Math.PI * 2, true);
+    //x, y, radius, startangle, endangle
 
     //Centre of Jog wheel
     context.strokeStyle = "red";
     context.fillStyle = "#ffffff";
     circle(1380, 350, 30, 0, Math.PI * 2, true);
+    //x, y, radius, startangle, endangle
 
     //Right Shift Button
 
@@ -574,6 +631,7 @@
     outLine(1155, 420, 30, 30);
     context.fillStyle = "#525b5f";
     rectangle(1155, 420, 30, 30);
+    //x, y, width, height
 
     //Right Sync Button
 
@@ -581,10 +639,12 @@
     context.strokeStyle = "#ffffff";
     context.fillStyle = "#FF0000";
     circle(1170, 510, 20, 0, Math.PI * 2, true);
+    //x, y, radius, startangle, endangle
 
     context.strokeStyle = "#ffffff";
     context.fillStyle = "#000000";
     circle(1170, 510, 15, 0, Math.PI * 2, true);
+    //x, y, radius, startangle, endangle
 
     // Right Loop buttons
 
@@ -604,12 +664,15 @@
 
     //Pad FX
     hotCue(1320, 540, 70, 20, 1327, 544, 55, 10);
+    //x, y, width, height, x2, y2, width2, height2
 
     //Slicer
     hotCue(1400, 540, 70, 20, 1407, 544, 55, 10);
+    //x, y, width, height, x2, y2, width2, height2
 
     //Sampler
     hotCue(1480, 540, 70, 20, 1487, 544, 55, 10);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue A
     hotCue(1240, 570, 70, 70, 1245, 575, 60, 60);
@@ -617,21 +680,27 @@
 
     //HotCue B
     hotCue(1320, 570, 70, 70, 1325, 575, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue C
     hotCue(1400, 570, 70, 70, 1405, 575, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue D
     hotCue(1480, 570, 70, 70, 1485, 575, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue E
     hotCue(1240, 650, 70, 70, 1245, 655, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue F
     hotCue(1320, 650, 70, 70, 1325, 655, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue G
     hotCue(1400, 650, 70, 70, 1405, 655, 60, 60);
+    //x, y, width, height, x2, y2, width2, height2
 
     //HotCue H
     hotCue(1480, 650, 70, 70, 1485, 655, 60, 60);
@@ -661,19 +730,21 @@
     <div id="audioBox"></div>
     <canvas id="analyserRender" style="width: 100%; height: 100%;"></canvas> <!--creates the canvas for the analyser-->
 </div>
+
 <script>
+
     //Used the Web Audio API to create the music visualiser
     //checks to see if then web Audio api is supported in the browser
     var popUp;
     window.addEventListener('load', init, false);
     function init() {
         try {
-            // Fix up for prefixing
-            window.AudioContext = window.AudioContext||window.AudioContext;
+            // checks to see if the browser is supported
+            window.AudioContext = window.AudioContext || window.AudioContext;
             popUp = new AudioContext();
         }
-        catch(e) {
-            alert('Web Audio API is not supported in this browser please use Google Chrome or FireFox');
+        catch (e) {
+            alert('Web Audio API is not supported in this browser please use Google Chrome or FireFox'); // feedback to the user
         }
 
     }
@@ -688,7 +759,7 @@
         //The audio gets routed to the waveform
         source = context.createMediaElementSource(audio); //passes argument audio object though the createMediaElementSource method
         source.connect(analyser); //passed the analyser method
-        analyser.connect(context.destination);
+        analyser.connect(context.destination); //Connect method is used on the analyser variable
         frameLooper(); //Function call that Animates the style of the graph
 
     }
@@ -697,7 +768,7 @@
     function frameLooper() {
         window.requestAnimationFrame(frameLooper); //Looping function
         fbcArray = new Uint8Array(analyser.frequencyBinCount); //array that represents the sound frequency
-        analyser.getByteFrequencyData(fbcArray);
+        analyser.getByteFrequencyData(fbcArray); //runs the getByteFrequencyData method and the array get passed through the method
         ctx.clearRect(0, 0, canvas.width, canvas.height); //clears the canvas
         var shades = ["#ff000a"]; //an array of colours
         var b = shades.length; //stores the length of the array in a variable
@@ -742,51 +813,50 @@
     if (canvas.getContext("2d")) { // Check HTML5 canvas support
         context = canvas.getContext("2d");// get Canvas Context object
 
-        function Head()
-        {
-            var JSONObject = JSON.parse( '{"radius": 30, "colour": "bisque"}' ); //Object properties
-            var JSONPosition = JSON.parse('{"x": 200, "y": 50} ');
+        function Head() {
+            var JSONObject = JSON.parse('{"radius": 30, "colour": "bisque"}'); // converts JSON method into a stringObject properties
+            var JSONPosition = JSON.parse('{"x": 200, "y": 50} '); //Object properties
             context.beginPath();
-            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius,0,2*Math.PI); // draw the circle
-            context.fillStyle = JSONObject["colour"]; // what colour?
+            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius, 0, 2 * Math.PI); // draws the circle
+            context.fillStyle = JSONObject["colour"]; //Colour
             context.fill();
             context.stroke();
         }
 
         function Eyes(x, y) {
-            var JSONObject = JSON.parse( '{"radius": 3, "colour": "#008F2C"}' );
-            var JSONLeft = JSON.parse('{"x": 190, "y": 45} ');
+            var JSONObject = JSON.parse('{"radius": 3, "colour": "#008F2C"}'); // converts JSON method into a stringObject properties
+            var JSONLeft = JSON.parse('{"x": 190, "y": 45} '); // converts JSON method into a stringObject properties
 
             context.beginPath();
-            context.arc(JSONLeft.x, JSONLeft.y ,JSONObject.radius,0,2*Math.PI);// draw the circle
+            context.arc(JSONLeft.x, JSONLeft.y, JSONObject.radius, 0, 2 * Math.PI);// draws the circle
             context.fillStyle = JSONObject["colour"]; // what colour?
             context.fill();
             context.stroke();
             context.closePath();
 
             //Right eye
-            var JSONRight = JSON.parse('{"x": 210, "y": 45} ');//Object properties
+            var JSONRight = JSON.parse('{"x": 210, "y": 45} '); // converts JSON method into a stringObject properties
             context.beginPath();
-            context.arc(JSONRight.x, JSONRight.y ,JSONObject.radius,0,2*Math.PI);// draw the circle
-            context.fillStyle = JSONObject["colour"]; // what colour?
+            context.arc(JSONRight.x, JSONRight.y, JSONObject.radius, 0, 2 * Math.PI);// draws the circle
+            context.fillStyle = JSONObject["colour"]; //Colour
             context.fill();
             context.stroke();
             context.closePath();
         }
 
         function Mouth() {
-            var JSONObject = JSON.parse( '{"radius": 20, "colour": "#FF000B"}' ); //Object properties
-            var JSONPosition = JSON.parse('{"x": 200, "y": 50} ');
+            var JSONObject = JSON.parse('{"radius": 20, "colour": "#FF000B"}'); //Object properties
+            var JSONPosition = JSON.parse('{"x": 200, "y": 50} '); //Object properties
             context.beginPath();
-            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius,0, Math.PI, false); // draw the circle
+            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius, 0, Math.PI, false); // draw the circle
             context.strokeStyle = JSONObject["colour"]; // what colour?
             context.stroke();
         }
 
         function Body() {
-            var JSONMoveTo = JSON.parse('{"x": 200, "y": 80} ');
-            var JSONLineTo =  JSON.parse('{"x1": 200, "y1": 180 } ');
-            var JSONColour = JSON.parse('{"colour": "#0000ff"} ');
+            var JSONMoveTo = JSON.parse('{"x": 200, "y": 80} '); // converts JSON method into a stringObject properties
+            var JSONLineTo = JSON.parse('{"x1": 200, "y1": 180 } '); // converts JSON method into a stringObject properties
+            var JSONColour = JSON.parse('{"colour": "#0000ff"} '); // converts JSON method into a stringObject properties
             context.beginPath();
             context.moveTo(JSONMoveTo.x, JSONMoveTo.y);
             context.lineTo(JSONLineTo.x1, JSONLineTo.y1);
@@ -795,10 +865,9 @@
 
         }
 
-        function Arms()
-        {
+        function Arms() {
             var JSONMoveTo = JSON.parse('{"x": 200,"y": 80} '); //Left Arm
-            var JSONLineToA =  JSON.parse('{"x1": 150, "y1": 130 } '); //Left Arm
+            var JSONLineToA = JSON.parse('{"x1": 150, "y1": 130 } '); //Left Arm
 
             context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Left Arm
             context.lineTo(JSONLineToA.x1, JSONLineToA.y1); //Left Arm
@@ -814,7 +883,7 @@
 
         function Legs() {
             var JSONMoveTo = JSON.parse('{"x": 200,"y": 180} '); //Left Leg
-            var JSONLineToA =  JSON.parse('{"x1": 150, "y1": 280 } '); //Left Leg
+            var JSONLineToA = JSON.parse('{"x1": 150, "y1": 280 } '); //Left Leg
 
             context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Left Leg
             context.lineTo(JSONLineToA.x1, JSONLineToA.y1); //Left Leg
@@ -826,10 +895,8 @@
 
             context.strokeStyle = JSONColour["colour"]; // blue
             context.stroke();
-            //200, 180, 150, 280, 200, 180, 250, 280
 
         }
-
 
         //Function calls
         Head();
@@ -843,9 +910,6 @@
         Arms();
 
         Legs();
-
-
-
 
     }
 </script>
