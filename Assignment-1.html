@@ -843,23 +843,36 @@
     if (canvas.getContext("2d")) { // Check HTML5 canvas support
         context = canvas.getContext("2d");// get Canvas Context object
 
-        function head(w,h)
+        function head()
         {
             var JSONObject = JSON.parse( '{"radius": 30, "colour": "bisque"}' ); //Object properties
+            var JSONPosition = JSON.parse('{"x": 200, "y": 50} ');
             context.beginPath();
-            context.arc(w,h,JSONObject.radius,0,2*Math.PI); // draw the circle
+            context.arc(JSONPosition.x, JSONPosition.y, JSONObject.radius,0,2*Math.PI); // draw the circle
             context.fillStyle = JSONObject["colour"]; // what colour?
             context.fill();
             context.stroke();
         }
 
         function eyes(x, y) {
-            var JSONObject = JSON.parse( '{"radius": 3, "colour": "#008F2C"}' ); //Object properties
+            var JSONObject = JSON.parse( '{"radius": 3, "colour": "#008F2C"}' );
+            var JSONLeft = JSON.parse('{"x": 190, "y": 45} ');
+
             context.beginPath();
-            context.arc(x, y,JSONObject.radius,0,2*Math.PI); // draw the circle
+            context.arc(JSONLeft.x, JSONLeft.y ,JSONObject.radius,0,2*Math.PI);// draw the circle
             context.fillStyle = JSONObject["colour"]; // what colour?
             context.fill();
             context.stroke();
+            context.closePath();
+
+            //Right eye
+            var JSONRight = JSON.parse('{"x": 210, "y": 45} ');//Object properties
+            context.beginPath();
+            context.arc(JSONRight.x, JSONRight.y ,JSONObject.radius,0,2*Math.PI);// draw the circle
+            context.fillStyle = JSONObject["colour"]; // what colour?
+            context.fill();
+            context.stroke();
+            context.closePath();
         }
 
         function body() {
@@ -873,17 +886,36 @@
             context.stroke();
 
         }
+
+        function Arms()
+        {
+            var JSONMoveTo = JSON.parse('{"x": 200,"y": 80} '); //Left Arm
+            var JSONLineToA =  JSON.parse('{"x1": 150, "y1": 130 } '); //Left Arm
+
+            context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Left Arm
+            context.lineTo(JSONLineToA.x1, JSONLineToA.y1); //Left Arm
+
+            var JSONLineToB = JSON.parse('{"x2": 250, "y2": 130 } ');//Right Arm
+            var JSONColour = JSON.parse('{"colour": "#0000ff"} ');//Right Arm
+            context.moveTo(JSONMoveTo.x, JSONMoveTo.y); //Right Arm
+            context.lineTo(JSONLineToB.x2, JSONLineToB.y2); //Right Arm
+
+            context.strokeStyle = JSONColour["colour"]; // blue
+            context.stroke();
+            //200, 80, 150, 130, 200, 80, 250, 130
+        }
         //Head
-        head(200, 50);
+        head();
         //W, H
 
         //Left Eye
-        eyes(190, 45);
-
-        //Right Eye
-        eyes(210, 45);
+        eyes();
 
         body();
+
+        Arms();
+
+
 
 
     }
